@@ -1,0 +1,6 @@
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\obj\Debug\Epsi.ReseauNeuroneV2.0.csprojAssemblyReference.cache
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\bin\Debug\Epsi.ReseauNeuroneV2.0.exe.config
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\bin\Debug\Epsi.ReseauNeuroneV2.0.exe
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\bin\Debug\Epsi.ReseauNeuroneV2.0.pdb
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\obj\Debug\Epsi.ReseauNeuroneV2.0.exe
+D:\EPSI\ReseauNeurone\Epsi.ReseauNeuroneV2.0\Epsi.ReseauNeuroneV2.0\obj\Debug\Epsi.ReseauNeuroneV2.0.pdb

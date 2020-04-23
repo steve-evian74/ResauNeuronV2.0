@@ -8,17 +8,19 @@ namespace Epsi.ReseauNeuroneV2._0
 {
     class Trainer
     {
+        
 
-
-        public void Verification()
+        public double Verification(double expected , double result)
         {
+            double verif = expected - result;
+            return Math.Pow(verif, 2);
 
         }
 
 
-        public void gradient()
+        public double gradient(double expected , double result)
         {
-
+            return 2 * (expected - result);
         }
 
 
