@@ -19,10 +19,10 @@ namespace Epsi.ReseauNeuroneV2._0
             //Une instance pour Trainer
             Trainer trainer = new Trainer();
 
-            double[] Weight = new double[] { 1, 2, 3, 4 };
+            double[] Weight = new double[] {0,0};
             int weights = 4;
             //Valeur "entrée"
-            double[] Valeur = new double[] { 1, 2, 8, 16 };
+            double[] Valeur = new double[] { 1, 2};
             Random rand = new Random();
             
             //Une insatance pour Neurone 
@@ -34,9 +34,9 @@ namespace Epsi.ReseauNeuroneV2._0
             do
             {
 
-                for (int i = 0; i < Valeur.Length; i++)
+                for (int i = 0; i < Weight.Length; i++)
                 {
-                    Valeur[i] = rand.Next(10);
+                    Weight[i] = rand.NextDouble();
                 }
 
 

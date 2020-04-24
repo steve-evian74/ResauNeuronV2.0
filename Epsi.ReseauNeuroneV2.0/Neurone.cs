@@ -11,7 +11,7 @@ namespace Epsi.ReseauNeuroneV2._0
         private double[] ArrayWeights;
         private double[] ArrayValeurs;
         private double[] Poids;
-        private double lr = 1 * 10 ;
+        private double lr = 1 * 1000 ;
        
 
 
