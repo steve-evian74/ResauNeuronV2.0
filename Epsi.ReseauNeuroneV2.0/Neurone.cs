@@ -11,7 +11,8 @@ namespace Epsi.ReseauNeuroneV2._0
         private double[] ArrayWeights;
         private double[] ArrayValeurs;
         private double[] Poids;
-        private double lr = 1 * 10 ^ -5;
+        private double lr = 1 * 10 ;
+       
 
 
         public Neurone(double[] Weights, double[] Valeurs)
@@ -29,7 +30,7 @@ namespace Epsi.ReseauNeuroneV2._0
 
         public double[] backprogate(double gradient)
         {
-            
+            lr = Math.Pow(lr, -5);
 
             for (int i = 0; i < ArrayWeights.Length; i++)
             {
