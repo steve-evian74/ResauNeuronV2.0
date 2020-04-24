@@ -31,13 +31,13 @@ namespace Epsi.ReseauNeuroneV2._0
             double expected = Valeur.Sum();
             Console.WriteLine("La valeur attendu est :" + expected);
 
-            
+            double Result = neurone.forward(Valeur, Weight);
+            do
+            {
 
                 //On récupére le résultat du Forward
                 Console.WriteLine("Le neurone a prédit : " + neurone.forward(Valeur, Weight));
-                double Result = neurone.forward(Valeur, Weight);
-            do
-            {
+                
                 // Juste pour l'informatif
                 Console.WriteLine("La valeur purement informatif " + trainer.Verification(expected, Result));
             
