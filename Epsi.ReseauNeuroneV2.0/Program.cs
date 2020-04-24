@@ -20,12 +20,12 @@ namespace Epsi.ReseauNeuroneV2._0
             //Une instance pour Trainer
             Trainer trainer = new Trainer();
 
-            double[] Weight = new double[] {0,0};
+            double[] Weight = new double[] {0,0,0,0};
             int weights = 4;
             //Valeur "entrée"
-            double[] Valeur = new double[] { 1, 2};
+            double[] Valeur = new double[] { 1, 9,6,8};
             Random rand = new Random();
-            
+            double Result;
             //Une insatance pour Neurone 
             Neurone neurone = new Neurone(Weight, Valeur);
 
@@ -41,11 +41,11 @@ namespace Epsi.ReseauNeuroneV2._0
                 }
 
 
-                double Result = neurone.forward(Valeur, Weight);
+                Result = neurone.forward(Valeur, Weight);
 
 
                 //On récupére le résultat du Forward
-                Console.WriteLine("Le neurone a prédit : " + neurone.forward(Valeur, Weight));
+                Console.WriteLine("Le neurone a prédit : " + Math.Round(neurone.forward(Valeur, Weight),0));
                 
                 // Juste pour l'informatif
                 Console.WriteLine("La valeur purement informatif " + trainer.Verification(expected, Result));
@@ -60,24 +60,16 @@ namespace Epsi.ReseauNeuroneV2._0
                 backpropagate = neurone.backprogate(gradient);
 
                 Console.WriteLine("Le résultat de backpropagate : ");
-                foreach (var item in backpropagate)
-                {
 
-                    Console.WriteLine(item);
-
-                }
                 for (int i = 0; i < backpropagate.Length; i++)
                 {
                     Weight[i] = backpropagate[i];
-                    if(Weight[i] < 0.3)
-                    {
-                        iterative = Weight[i]; 
-                    }
+                    Console.WriteLine(Weight[i]);
                 }
 
                 incremente++;
-            } while (incremente < 200 || iterative < 0.03);
-
+            } while (trainer.Verification(expected, Result) > 0.03);
+            Console.WriteLine("le système a essayé : " + incremente + " de fois" );
 
 
             //Eviter d'éteindre la console

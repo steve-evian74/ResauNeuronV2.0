@@ -24,7 +24,7 @@ namespace Epsi.ReseauNeuroneV2._0
 
         public double activation(double result)
         {
-            return result;
+            return result*2;
         }
 
 
