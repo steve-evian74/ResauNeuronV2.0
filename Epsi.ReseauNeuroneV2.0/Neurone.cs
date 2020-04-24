@@ -8,20 +8,41 @@ namespace Epsi.ReseauNeuroneV2._0
 {
     class Neurone
     {
+        private double[] ArrayWeights;
+        private double[] ArrayValeurs;
+        private double[] Poids;
+        private double lr = 1 * 10 ^ -5;
 
 
-        public void activation()
+        public Neurone(double[] Weights, double[] Valeurs)
         {
-
+            ArrayWeights = Weights;
+            ArrayValeurs = Valeurs;
         }
 
 
-        public void backprogate()
+        public double activation(double result)
         {
-
+            return result;
         }
 
-        public double forward(double[] valeur , double[] weight)
+
+        public double[] backprogate(double gradient)
+        {
+            Poids = new double[ArrayWeights.Length];
+            
+
+            for (int i = 0; i < ArrayWeights.Length; i++)
+            {
+
+
+                Poids[i] = ArrayWeights[i] - lr * ArrayValeurs[i] * gradient;
+            }
+
+            return Poids;
+        }
+
+        public double forward(double[] valeur, double[] weight)
         {
             double result = 0;
             if (weight.Length == valeur.Length)
@@ -35,7 +56,7 @@ namespace Epsi.ReseauNeuroneV2._0
             {
                 Console.WriteLine("Taille des tableaux incompatibles");
             }
-            return result;
+            return activation(result);
         }
 
     }

@@ -11,17 +11,21 @@ namespace Epsi.ReseauNeuroneV2._0
         static void Main(string[] args)
         {
 
-            // Déclaration des instance 
+            double[] backpropagate;
 
-            //Une insatance pour Neurone 
-            Neurone neurone = new Neurone();
+
 
             //Une instance pour Trainer
             Trainer trainer = new Trainer();
 
-            double[] Weight = new double[] { 1, 2, 3, 4 };
+            double[] Weight = new double[] { 1,2,3,4};
+            int weights = 4;
+            //Valeur "entrée"
             double[] Valeur = new double[] { 5, 6, 10, 16 };
             
+            //Une insatance pour Neurone 
+            Neurone neurone = new Neurone(Weight, Valeur);
+
             //On calcule la somme des valeurs d'un tableau valeurs et on se sert cette variable comme le résultat attendu
             double expected = Valeur.Sum();
             Console.WriteLine("La valeur attendu est :" + expected);
@@ -38,6 +42,21 @@ namespace Epsi.ReseauNeuroneV2._0
             // On récupère la valeur Gradient 
             double gradient = trainer.gradient(expected, Result);
             Console.WriteLine("La valeur gradient est : " + gradient);
+
+
+            //On calcule le backpropagate 
+            backpropagate = neurone.backprogate(gradient);
+
+            foreach (var item in backpropagate)
+            {
+
+                Console.WriteLine(item);
+
+            }
+
+
+
+
             //Eviter d'éteindre la console
             Console.ReadKey();
         }

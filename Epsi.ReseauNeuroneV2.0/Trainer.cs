@@ -12,7 +12,7 @@ namespace Epsi.ReseauNeuroneV2._0
 
         public double Verification(double expected , double result)
         {
-            double verif = expected - result;
+            double verif =  expected - result;
             return Math.Pow(verif, 2);
 
         }
