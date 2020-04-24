@@ -12,17 +12,18 @@ namespace Epsi.ReseauNeuroneV2._0
         {
 
             double[] backpropagate;
+            int incremente = 0;
 
 
 
             //Une instance pour Trainer
             Trainer trainer = new Trainer();
 
-            double[] Weight = new double[] { 1,2,3,4};
+            double[] Weight = new double[] { 1, 2, 3, 4 };
             int weights = 4;
             //Valeur "entrée"
             double[] Valeur = new double[] { 5, 6, 10, 16 };
-            
+
             //Une insatance pour Neurone 
             Neurone neurone = new Neurone(Weight, Valeur);
 
@@ -30,30 +31,39 @@ namespace Epsi.ReseauNeuroneV2._0
             double expected = Valeur.Sum();
             Console.WriteLine("La valeur attendu est :" + expected);
 
+            
 
-            //On récupére le résultat du Forward
-            Console.WriteLine("Le neurone a prédit : " + neurone.forward(Valeur,Weight));
-            double Result = neurone.forward(Valeur, Weight);
-
-            // Juste pour l'informatif
-            Console.WriteLine("La valeur purement informatif " + trainer.Verification(expected,Result));
-
-
-            // On récupère la valeur Gradient 
-            double gradient = trainer.gradient(expected, Result);
-            Console.WriteLine("La valeur gradient est : " + gradient);
-
-
-            //On calcule le backpropagate 
-            backpropagate = neurone.backprogate(gradient);
-
-            foreach (var item in backpropagate)
+                //On récupére le résultat du Forward
+                Console.WriteLine("Le neurone a prédit : " + neurone.forward(Valeur, Weight));
+                double Result = neurone.forward(Valeur, Weight);
+            do
             {
+                // Juste pour l'informatif
+                Console.WriteLine("La valeur purement informatif " + trainer.Verification(expected, Result));
+            
 
-                Console.WriteLine(item);
+                // On récupère la valeur Gradient 
+                double gradient = trainer.gradient(expected, Result);
+                Console.WriteLine("La valeur gradient est : " + gradient);
 
-            }
 
+                //On calcule le backpropagate 
+                backpropagate = neurone.backprogate(gradient);
+
+                Console.WriteLine("Le résultat de backpropagate : ");
+                foreach (var item in backpropagate)
+                {
+
+                    Console.WriteLine(item);
+
+                }
+                for (int i = 0; i < backpropagate.Length; i++)
+                {
+                    Weight[i] = backpropagate[i];
+                }
+
+                incremente++;
+            } while (incremente < 10);
 
 
 
