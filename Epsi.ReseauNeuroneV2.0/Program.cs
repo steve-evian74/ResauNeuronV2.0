@@ -13,6 +13,7 @@ namespace Epsi.ReseauNeuroneV2._0
 
             double[] backpropagate;
             int incremente = 0;
+            double iterative = 1;
 
 
 
@@ -68,10 +69,14 @@ namespace Epsi.ReseauNeuroneV2._0
                 for (int i = 0; i < backpropagate.Length; i++)
                 {
                     Weight[i] = backpropagate[i];
+                    if(Weight[i] < 0.3)
+                    {
+                        iterative = Weight[i]; 
+                    }
                 }
 
                 incremente++;
-            } while (incremente < 200);
+            } while (incremente < 200 || iterative < 0.03);
 
 
 
