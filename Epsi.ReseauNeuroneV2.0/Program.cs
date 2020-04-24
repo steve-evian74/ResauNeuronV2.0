@@ -22,8 +22,9 @@ namespace Epsi.ReseauNeuroneV2._0
             double[] Weight = new double[] { 1, 2, 3, 4 };
             int weights = 4;
             //Valeur "entrée"
-            double[] Valeur = new double[] { 5, 6, 10, 16 };
-
+            double[] Valeur = new double[] { 1, 2, 8, 16 };
+            Random rand = new Random();
+            
             //Une insatance pour Neurone 
             Neurone neurone = new Neurone(Weight, Valeur);
 
@@ -32,6 +33,13 @@ namespace Epsi.ReseauNeuroneV2._0
             Console.WriteLine("La valeur attendu est :" + expected);
             do
             {
+
+                for (int i = 0; i < Valeur.Length; i++)
+                {
+                    Valeur[i] = rand.Next(10);
+                }
+
+
                 double Result = neurone.forward(Valeur, Weight);
 
 
@@ -63,7 +71,7 @@ namespace Epsi.ReseauNeuroneV2._0
                 }
 
                 incremente++;
-            } while (incremente < 10);
+            } while (incremente < 200);
 
 
 
