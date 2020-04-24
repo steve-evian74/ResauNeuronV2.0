@@ -29,17 +29,16 @@ namespace Epsi.ReseauNeuroneV2._0
 
         public double[] backprogate(double gradient)
         {
-            Poids = new double[ArrayWeights.Length];
             
 
             for (int i = 0; i < ArrayWeights.Length; i++)
             {
 
 
-                Poids[i] = ArrayWeights[i] - lr * ArrayValeurs[i] * gradient;
+                ArrayWeights[i] = ArrayWeights[i] - lr * ArrayValeurs[i] * gradient;
             }
 
-            return Poids;
+            return ArrayWeights;
         }
 
         public double forward(double[] valeur, double[] weight)

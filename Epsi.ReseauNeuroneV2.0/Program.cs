@@ -30,10 +30,10 @@ namespace Epsi.ReseauNeuroneV2._0
             //On calcule la somme des valeurs d'un tableau valeurs et on se sert cette variable comme le résultat attendu
             double expected = Valeur.Sum();
             Console.WriteLine("La valeur attendu est :" + expected);
-
-            double Result = neurone.forward(Valeur, Weight);
             do
             {
+                double Result = neurone.forward(Valeur, Weight);
+
 
                 //On récupére le résultat du Forward
                 Console.WriteLine("Le neurone a prédit : " + neurone.forward(Valeur, Weight));
