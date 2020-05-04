@@ -18,7 +18,7 @@ namespace Epsi.ReseauNeuroneV2._0
         }
 
 
-        public double gradient(double expected , double result)
+        public double Gradient(double expected , double result)
         {
             return 2 * (expected - result);
         }
